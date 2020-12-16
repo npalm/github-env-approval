@@ -1,4 +1,4 @@
-name: build1
+name: terraform
 on:
   push:
   workflow_dispatch:
@@ -8,8 +8,12 @@ on:
         required: true
         default: "test run..."
 
+defaults:
+  run:
+    working-directory: ${{ env.tf_actions_working_dir }}
+
 jobs:
-  cowsay1_1:
+  plan:
 
     runs-on: ['ubuntu-latest']
 
