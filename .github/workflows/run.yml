@@ -12,13 +12,14 @@ on:
 jobs:
   
   plan:
-    defaults:
-      run:
-        working-directory: ${{ env.tf_actions_working_dir }}
+    # defaults:
+    #   run:
+    #     working-directory: ${{ env.tf_actions_working_dir }}
 
     runs-on: ['ubuntu-latest']
 
     steps:
+    - uses: actions/checkout@v2
     - uses: hashicorp/setup-terraform@v1
       with:
           terraform_version: 0.14.2
